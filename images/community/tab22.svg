@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 10</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="100%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FC9474" offset="0%"></stop>
+            <stop stop-color="#FB745F" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="我的_登录-copy-7" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-60.000000, -626.000000)">
+        <g id="Group-10" transform="translate(60.000000, 626.000000)">
+            <polygon id="Rectangle-11" fill="url(#linearGradient-1)" points="2 9.62756405 11.97353 2 22 9.62756405 22 21 2 21"></polygon>
+            <path d="M8,15 L17,15" id="Path-4" stroke="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

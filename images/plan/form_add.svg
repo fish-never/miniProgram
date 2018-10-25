@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/form_add</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="成长+-计划" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="成长计划_列表" transform="translate(-173.000000, -503.000000)" fill="#D8D8D8" fill-rule="nonzero">
+            <g id="btn/form_add" transform="translate(15.000000, 488.000000)">
+                <path d="M170,27 L170,18 C170,16.3431458 171.343146,15 173,15 C174.656854,15 176,16.3431458 176,18 L176,27 L185,27 C186.656854,27 188,28.3431458 188,30 C188,31.6568542 186.656854,33 185,33 L176,33 L176,42 C176,43.6568542 174.656854,45 173,45 C171.343146,45 170,43.6568542 170,42 L170,33 L161,33 C159.343146,33 158,31.6568542 158,30 C158,28.3431458 159.343146,27 161,27 L170,27 Z" id="icon/form_add"></path>
+            </g>
+        </g>
+    </g>
+</svg>

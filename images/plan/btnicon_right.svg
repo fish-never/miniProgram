@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/btnicon_right</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="成长+-计划" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="成长计划_计划详情_打卡排行_已打卡" transform="translate(-275.000000, -127.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="plant">
+                <g id="btn/checkin" transform="translate(265.000000, 118.000000)">
+                    <g id="icon/btnicon_right" transform="translate(10.000000, 9.000000)">
+                        <path d="M7,0 C3.12083334,0 0,3.12083334 0,7 C0,10.8791667 3.12083334,14 7,14 C10.8791667,14 14,10.8791667 14,7 C14,3.12083334 10.8791667,0 7,0 Z M11.375,5.25 L6.7375,9.8875 C6.41666666,10.2083333 5.83333334,10.2083333 5.5125,9.8875 L2.625,7 C2.625,7 2.1875,6.5625 2.625,6.125 C3.0625,5.6875 3.5,6.125 3.5,6.125 L6.125,8.75 L10.5,4.375 C10.5,4.375 10.9375,3.9375 11.375,4.375 C11.8125,4.8125 11.375,5.25 11.375,5.25 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

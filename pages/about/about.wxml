@@ -1,0 +1,15 @@
+<!--pages/about/about.wxml-->
+<view class='displayf'>
+   <view class='imgcontent position'> 
+      <image src='../../images/about.png' class='img'></image>
+   </view> 
+   <view class='community'>
+      <text bindtap='norms'>社区规范</text>
+      <view class='middle'></view>
+      <text bindtap='conventions'>社区公约</text> 
+   </view>
+   <view class='contact'>
+<!--<button open-type='contact'>进入客服会话</button>-->
+   </view>
+
+</view>

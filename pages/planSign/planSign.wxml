@@ -1,0 +1,29 @@
+<view class="plan-sign">
+    <view class="plan-sign-title">
+        <image class="title-icon" src="../../images/community/icon.svg" ></image>
+        <view class="title-text">打卡成功，分享你的感想</view>
+        <button wx:if="{{userscope == 1}}" class="send {{content.length>0?'active':''}}" bindtap="sendSign">发布</button>
+        <button wx:if="{{userscope == 0}}" class="send {{content.length>0?'active':''}}"
+                bindgetuserinfo="checkUserInfo" hover-class='none'
+                open-type="getUserInfo">发布</button>
+    </view>
+    <view class="content-input-box">
+        <textarea bindblur="bindTextAreaBlur" value="{{content}}" maxlength="200" auto-focus="true"
+                  bindinput="textareaInput" class="content-input" placeholder="打卡成功啦，来说说现在的想法吧..." />
+        <view class="text-count" wx:if="{{content.length>100}}">
+            <text>{{content.length}}</text>/200
+        </view>
+    </view>
+    <view class="image-select">
+        <view class="select-image-box" wx:for="{{imagePaths}}" wx:key="{{index}}">
+            <image class="select-image" mode="aspectFill" src="{{item}}"></image>
+            <view class="icon-delete" catchtap="deleteImage" data-index="{{index}}">
+                <view class="line"></view>
+            </view>
+        </view>
+        <image wx:if="{{imagePaths.length == 0}}" bindtap="takePhoto"
+               class="select-icon" src="../../images/plan/btn_add_photo_pic.svg" ></image>
+        <image wx:if="{{imagePaths.length > 0 && imagePaths.length<9}}" bindtap="takePhoto"
+               class="select-icon" src="../../images/plan/btn_add_photo.svg" ></image>
+    </view>
+</view>

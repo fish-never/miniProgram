@@ -1,0 +1,54 @@
+<!--pages/label/label.wxml-->
+<view class="fff-bg height100">
+  <view wx:if="{{nodata==1}}">
+  <view class="nodata-img">
+    <image src='../../images/icon-nodata.png' mode="aspectFit"></image>
+  </view>
+  <view class="nodata-font fontsize26 text-c color444">暂无内容</view>
+  </view>
+  <view wx:if="{{nodata==2}}">
+    <view class="comment-list" wx:for="{{commentList}}" wx:for-item="item" wx:key="{{item.id}}" >
+      <view class="comment-li position-r fff-bg" id="{{item.id}}">
+        <view class="com-top">
+          <view class="float-l com-userimg fontsize0">
+            <image class="li-icon-img" mode='aspectFill' src="{{item.thumb_img}}"></image>
+          </view>
+          <view class="float-l">
+            <view class="fontsize30 color-dark margin-tf5 nickname">{{item.nickname}}</view>
+            <view class="fontsize24 color-b3 nicktime">{{item.created_at}}</view>
+          </view>
+        </view>
+        <navigator class="com-center margin-b30" hover-class="hoverSty"  url="/pages/reply/reply?commentId={{item.comment_id}}">
+          <view class="fontsize32 color-dark com-con position-r">
+            <view class="commonts-content displayB fontsize30 color-dark lineheight50">
+            <text>{{item.content}}</text>
+            <text wx:if="{{item.to_nickname!=''}}"><text class="color-litterdark  color-8">//@{{item.to_nickname}}：</text><text>{{item.to_content}}</text></text>
+            </view>
+            <view class="arrow-mycomment position-a">
+          </view>
+          </view> 
+        </navigator>
+        <navigator hover-class='none' class="com-bottom position-r"
+                   url="{{item.type==2 ?('/pages/articleNode/articleNode?topic_id='+item.article_id):('/pages/article/article?article_id='+item.article_id+'&content_id='+item.content_id)}}">
+          <view class="link-view fontsize0 position-a">
+            <image class="link-img" mode='aspectFit' src="../../images/user/link.png"></image>
+          </view>
+          <view class="bottom-com fontsize30 color-litterdark">
+            {{item.title}}
+          </view>
+        </navigator>
+      </view>
+      
+    </view>
+    <view class="nodata-view fontsize26 text-c color444 fff-bg" wx:if="{{nomoredata==2}}">
+    <text class="iconfont icon-loading loading" space="nbsp"></text><text>正在加载更多数据</text>
+    </view>
+    <view class="nodata-view fontsize26 text-c color444 fff-bg" wx:if="{{nomoredata==1}}">
+      没有更多内容了
+    </view>
+    <view class="nodata-view fontsize26 text-c color444 fff-bg" wx:if="{{nomoredata==3}}">
+      加载失败，稍后再试
+    </view>
+  </view>
+</view>
+

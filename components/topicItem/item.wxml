@@ -1,0 +1,61 @@
+<import src="../../wxParse/wxParse.wxml" />
+<wxs module="filter" src="../../common/filter.wxs"></wxs>
+
+<view bindtap='gotoArticle' id="{{topicInfo.id}}" class="content">
+  <view class="clearfloat">
+    <image src='{{topicInfo.thumb_img || "../../images/topic/userAvatar.png"}}' class='userAvatar' />
+    <text class='username'>{{topicInfo.nickname}}</text>
+    <text class='time'>{{topicInfo.created_at}}</text>
+    <text class="show_sign" wx:if="{{topicInfo.sign_total >0}}">打卡<text class="sign_day ">{{topicInfo.sign_total}}</text>天</text>
+  </view>
+  <view class='detail' hover-class="none">
+  <!-- <view>{{filter.fmtTopic(topicInfo.content.content)}}</view> -->
+    <!-- <rich-text nodes="{{topicInfo.content.content}}"></rich-text> -->
+        <rich-text nodes="{{filter.fmtTopic(topicInfo.content.content)}}"></rich-text>
+  </view>
+  <view class='contentImg' wx:if="{{topicInfo.content.images.length > 1}}">
+    <view class="contentImg-inner" wx:if="topicInfo.content.images[0]">
+      <image src='{{topicInfo.content.images[0]}}' class='cImg' lazy-load="{{true}}" mode="aspectFill" />
+    </view>
+    <view class="contentImg-inner" wx:if="topicInfo.content.images[1]">
+      <image src='{{topicInfo.content.images[1]}}' class='cImg'  lazy-load="{{true}}" mode="aspectFill" />
+    </view>
+    <view class="contentImg-inner" wx:if="topicInfo.content.images[2]">
+      <image src='{{topicInfo.content.images[2]}}' class='cImg'  lazy-load="{{true}}" mode="aspectFill" />
+    </view>
+  </view>
+  <view class='contentImg' wx:if="{{topicInfo.content.images.length == 1}}">
+    <view class="contentImg-inner contentImg-inner01">
+      <image src='{{topicInfo.content.images[0]}}' class='cImg item-img' lazy-load="{{true}}" mode="aspectFill" />
+    </view>
+    
+  </view>
+  <view class='bottombar'>
+    <view class='function'>
+      <view class='number position-r function-text' wx:if="{{topicInfo.comment_count>0}}">
+        <image src='../../images/topic/review.svg' class='functionImg position-a' />
+        <number-format realNum="{{topicInfo.comment_count}}"></number-format>
+      </view>
+      <view class='number position-r function-text' wx:else>
+        <image src='../../images/topic/review.svg' class='functionImg position-a' />评论</view>
+    </view>
+    <view class="delimiter"></view>
+    <view class='function'>
+      <view class='number position-r function-text' wx:if="{{topicInfo.like_count>0}}">
+        <image src='../../images/topic/zan.svg' class='functionImg position-a' />
+        <number-format realNum="{{topicInfo.like_count}}"></number-format>
+      </view>
+      <view class='number position-r function-text' wx:else>
+        <image src='../../images/topic/zan.svg' class='functionImg position-a' />点赞</view>
+    </view>
+    <view class="delimiter"></view>
+    <view class='function'>
+      <view class='number position-r function-text' wx:if="{{topicInfo.share_count>0}}">
+        <image src='../../images/topic/share.svg' class='functionImg position-a' />
+        <number-format realNum="{{topicInfo.share_count}}"></number-format>
+      </view>
+      <view class='number position-r function-text' wx:else>
+        <image src='../../images/topic/share.svg' class='functionImg position-a' />转发</view>
+    </view>
+  </view>
+</view>

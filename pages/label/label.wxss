@@ -1,0 +1,16 @@
+/* pages/label/label.wxss */
+page{height:100%;}
+.tit{text-align: center;padding:127rpx 0 17rpx;line-height:36rpx;margin-bottom: 18rpx;}
+.con{line-height:24rpx;}
+.margin-b96{margin-bottom:90rpx;}
+.paddinglr50{padding:0 50rpx;}
+.flex-box{flex-wrap:wrap;justify-content:flex-end;margin-bottom: 45rpx;padding-top:70rpx;}
+.weui-flex_item{line-height: 88rpx;height:88rpx;margin-bottom: 45rpx;text-align: center;width:200rpx;border-radius: 0;border:none!important;}
+.footer-bar{padding-bottom:15rpx;}
+.footer-bar .weui-flex_item{margin:0 auto 45rpx;line-height: 88rpx;width:520rpx;text-align: center;border-radius: 100rpx;}
+.tag{line-height: 24rpx;top:-44rpx;left:50%;transform: translateX(-50%)}
+.label-font{bottom:-4rpx;left:55rpx;}
+.tit-view{height:45rpx;text-align: left;margin-bottom: 5rpx;}
+.tit-view image{height:100%;width:250rpx;float:left;}
+.image-font{margin-left:258rpx;line-height: 55rpx;}
+.label-bg{height:460rpx;}

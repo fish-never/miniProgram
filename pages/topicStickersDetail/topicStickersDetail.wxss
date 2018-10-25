@@ -1,0 +1,227 @@
+/* pages/topicDetail/topicDetail.wxss */
+@import "../../wxParse/wxParse.wxss";
+page .scollV{
+  box-sizing: border-box;
+  width:100%;
+  margin-top:388rpx;
+}
+.join_plan{
+  font-size:24rpx;
+  color:#fff;
+  text-decoration: underline;
+  text-align: right;
+  float: right;
+}
+.nodata-view{height:120rpx;line-height: 120rpx;}
+.nodata {
+  text-align: center;
+  font-size: 24rpx;
+  height:120rpx;line-height: 120rpx;
+  color: #999;
+
+}
+.swiper-inner{height:100%;overflow-y: scroll;}
+.title{ 
+  width:750rpx;
+  height:280rpx;
+  overflow: hidden;
+   background:linear-gradient(90deg,rgba(248,92,92,1),rgba(254,119,120,1)); 
+  /* background: url('../../images/user/topicTitle.png'); */
+  border-radius:0rpx 0rpx 40rpx 40rpx;
+  margin-bottom: 20rpx;
+}
+.tsd{z-index: 99;background-color: #f5f5f5;top:0;width:100%;}
+.topic{
+  color: white;
+  font-size: 48rpx;
+height: 50rpx;
+ line-height:50rpx;
+ margin-bottom: 20rpx;
+ overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.title-inner{top:0;left:0;padding:28rpx 42rpx 0;width:100%;box-sizing: border-box;}
+.topicdesc{
+ height: 30rpx;
+ line-height:30rpx;
+  color: white;
+  font-size: 30rpx;
+  margin-bottom: 60rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.titlebg{
+  height: 100%;
+  width: 100%;
+}
+.discussnum{
+ height: 32rpx;
+ line-height:32rpx;
+  color:white;
+  font-size:24rpx;
+  padding-left:45rpx;
+}
+.commenticon{
+  left:0;top:0;
+  height: 32rpx;
+  width: 36rpx;
+}
+.contenttab{
+  border-radius:40px 40px 0px 0px;
+  height: 88rpx;
+  width: 750rpx;
+  background-color:white;
+  margin-top:20rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.swipercontent{
+  height:100%;
+}
+.swiper-view-lj{
+  flex:1;
+line-height: 56rpx;
+width: 100%; 
+border-radius:40px 40px 0px 0px;
+  height: 88rpx;
+  background-color:white;
+}
+.position-a{
+  position:absolute;
+}
+.small-line{
+  width:40rpx;
+  height:6rpx;
+  bottom:0;left:50%;
+  border-radius: 50rpx;
+  transform: translateX(-50%);
+}
+.disF{
+  display: flex;
+  justify-content: space-around;
+}
+.swiper-view-lj ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.swiper {
+  line-height: 56rpx;
+  width: 100%; 
+  box-sizing: border-box;
+  white-space: nowrap;
+  height: 100%;
+}
+/* .swiper-span {
+height:56rpx;
+line-height: 56rpx;
+text-align: center;
+display: inline-block;
+width:26%;
+} */
+.swiper-span {
+  /* height:56rpx; */
+  line-height: 86rpx;
+  text-align: center;
+  display: inline-block;
+  width:26%;
+  color: #8EA6B0;
+  font-size: 30rpx;
+  height: 100%;
+}
+.content{
+  background-color: #FFFFFF;
+  border-bottom:1rpx solid #EBEBEB;
+  border-top:1rpx solid #EBEBEB;
+  height: auto;
+
+}
+.username{
+  font-size: 30rpx;
+  color: #344750;
+  float: left;
+  width:80%;
+  margin-left:20rpx;
+  margin-top:28rpx;
+}
+.time{
+  font-size: 24rpx;
+  color: #B3B3B3;
+  float: left;
+  width:80%;
+  margin-left:20rpx;
+}
+.contentTopic{
+  font-size: 34rpx;
+  color: #FD782D;
+  float: left;
+  width:100%;
+  margin-left: 28rpx;
+}
+
+.detail{
+  font-size: 30rpx;
+  color: #344750;
+  margin:0 28rpx 32rpx;
+  /* overflow: hidden; */
+   -webkit-line-clamp: 2;
+}
+
+.functionImg{
+  width: 35rpx;
+  height: 35rpx;
+  top:0;left:0;
+}
+.delimiter{
+  margin-top:12rpx;
+  width: 4rpx;
+  height: 30rpx;
+  background-color: #EBEBEB;
+  float: left;
+}
+.userAvatar{
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 50%;
+  margin-left: 34rpx;
+  float: left;
+  margin-top:40rpx;
+}
+.number{
+  font-size: 24rpx;
+  display: inline;
+}
+.bottombar{
+  overflow: hidden;
+  display: flex;
+}
+.function{
+  flex:1;
+  margin-bottom: 17rpx;
+  text-align: center;
+}
+.contentImg{
+  margin:0 28rpx 12rpx;
+  overflow: hidden;
+}
+.contentImg-inner{padding:0 10rpx;font-size: 0;width: 33.3%;margin-bottom: 20rpx;box-sizing: border-box;float:left;}
+.cImg{height: 224rpx;}
+.contentImg-inner01 .cImg{height: 380rpx;}
+.function-text{padding-left:40rpx;display: inline;}
+.margin-b30{margin-bottom: 30rpx;}
+.overflow-s{overflow-y: scroll;}
+.contentImg-inner01{width: 100%;}
+
+
+
+
+
+
+
+
+
+
+
+

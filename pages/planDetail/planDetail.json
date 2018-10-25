@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#F85C5C",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "计划详情",
+  "usingComponents": {
+    "topic-item": "/components/topicItem/item",
+    "number-format": "/components/numberFormat/numberFormat"
+  }
+}

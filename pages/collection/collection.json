@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "精选话题",
+  "usingComponents": {
+    "number-format": "/components/numberFormat/numberFormat"
+  }
+}

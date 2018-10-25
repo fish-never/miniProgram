@@ -1,0 +1,65 @@
+<!--pages/planIndex/planIndex.wxml-->
+<view>
+  <view wx:if="{{playList.length<=0}}">
+    <view class="noPlay">
+      <view class="text-c img_view">
+        <image class="noplan_img" src="/images/plan/project.jpg"></image>
+      </view>
+      <view class="btn01 text-c">
+        <form bindsubmit="toplanList" report-submit='true' class="main-content">
+          <button form-type='submit' class="main-content01" hover-class='none'>
+            立即添加
+          </button>
+        </form>
+      </view>
+      <view class="text-c fontsize28 color-b3">还没加入任何计划</view>
+    </view>
+  </view>
+  <view wx:else class="planindex_view">
+    <view class="hasPlay">
+      <view class="{{'bg_color_'+(index%6)}} play_box position-r" wx:for="{{playList}}" wx:for-item="item" wx:key="index">
+        <form bindsubmit="toPage" report-submit='true' class="main-content" data-index="{{index}}" data-planid="{{item.plan_id}}" data-isadd="{{1}}" id="{{item.plan_id}}">
+          <button form-type='submit' class="main-content" hover-class='none'>
+            <view class="overflow-h ver-b position-r">
+              <view class="float-l name">
+                <text class="fontsize40">{{item.plan_title}}</text>
+              </view>
+
+            </view>
+            <view class="overflow-h height120">
+              <view class="float-l h_img_view">
+                <image class="play_icon" src="{{item.plan_icon}}"></image>
+              </view>
+              <view class="float-r view_font">
+                <view class="fontsize20 displayB text-r view_font01">已参与
+                  <text class="numFontF">{{item.join_day}}</text> 天</view>
+                <view class="fontsize28 displayB text-r view_font02">打卡
+                  <text class="fontsize48 play_day"><text class="numFontF">{{item.sign_total}}</text></text>天</view>
+              </view>
+            </view>
+          </button>
+        </form>
+        <view class="position-a view-btn">
+          <view class="" hidden="{{item.is_sign==1}}">
+            <button hidden="{{userscope==0}}" class="fontsize24" class="btn02" catchtap='addSign' data-item="{{item}}" data-index="{{index}}">立即打卡</button>
+            <button hidden="{{userscope==1}}" bindgetuserinfo="checkUserInfo" class="fontsize24" open-type="getUserInfo" hover-class='none' class="btn02" data-item="{{item}}" data-index="{{index}}">立即打卡</button>
+          </view>
+          <view hidden="{{item.is_sign==0}}" class="fontsize24">今日已打卡</view>
+        </view>
+      </view>
+
+      <view class="play_box add_box marginN" wx:if="{{playList.length<6}}">
+        <form bindsubmit="toplanList" report-submit='true' class="main-content">
+          <button form-type='submit' class="btn03 fontsize0" hover-class='none'>
+            <image class="play_img" src="/images/plan/form_add.svg"></image>
+          </button>
+        </form>
+      </view>
+    </view>
+    <view class="text-c">
+      <form bindsubmit="toplanList" report-submit='true' class="main-content">
+        <button form-type='submit' class="text-c color333 fontsize28 btn03" hover-class='none'>管理成长计划</button>
+      </form>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+<!--pages/label/label.wxml-->
+<view class="fff-bg height100 load position-r" >
+<view class="loadimg position-a">
+<image class="" mode="" src="/images/logo.png"></image>
+</view>
+</view>
+

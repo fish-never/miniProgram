@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "number-format": "/components/numberFormat/numberFormat"
+  }
+}

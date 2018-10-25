@@ -1,0 +1,182 @@
+<view class="position-r">
+<view class="tsd position-f">
+  <view class="title position-r {{'bg_color_'+bgNum}}">
+    <view class="plan_icon_big"   wx:if="{{is_add==0}}">
+      <image src="{{planDel.user_icon}}"/>
+    </view>
+    <view class="position-a title-inner">
+      <view wx:if="{{is_add==0}}">
+        <view style="float:left">
+          <image src="{{planDel.user_icon}}" class="plan_icon" />
+        </view>
+        <view class="plan_center">
+          <view class='topic'>{{planDel.title}}</view>
+          <view class='topicdesc'>
+            <number-format wx:if="{{planDel.user_count > 0}}" realNum="{{planDel.user_count}}"></number-format>人参与
+          </view>
+        </view>
+        <view class="plan_right2">
+          <button class="join_btn" bindtap="add" wx:if="{{is_add==0 && userscope == 1}}">加入计划</button>
+          <button wx:if="{{is_add == 0 && userscope == 0}}" class="join_btn" hover-class='none' open-type="getUserInfo"  bindgetuserinfo="bindGetUserInfo">
+            加入计划
+          </button>
+        </view>
+      </view>
+
+      <view wx:if="{{is_add==1}}">
+        <navigator url="{{'/pages/planCalendar/planCalendar?bgNum='+bgNum+'&planId='+planId+'&title='+title + '&share_icon=' + share_icon}}" class="date_text date-wrap" hover-class='none' >
+          <view class="date-week">{{Moth}}月{{today}}号 {{day}} </view>
+          <view wx:for="{{week}}" wx:key="index" class="date_item">
+            <text class="{{ item.is_sign  == 1 ? 'sign_date':''}}">{{item.date}}</text>
+            <text  wx:if="{{item.today == true}}" class="dot" ></text>
+          </view>
+        </navigator>
+        <view style="float:left">
+          <image src="{{planDel.user_icon}}" class="plan_icon" />
+        </view>
+        <view class="plan_right">
+        <view wx:if="{{is_sign == 0}}">
+          <button hidden="{{ userscope == 0}}" class="join_btn" bindtap="addSign">立即打卡</button>
+          <button hidden="{{ userscope == 1}}"  class="join_btn" hover-class='none' open-type="getUserInfo"  bindgetuserinfo="checkUserInfo">
+            立即打卡
+          </button>
+          </view>
+          <navigator wx:if="{{is_sign == 1}}" class="join_btn right_btn" url="{{'../planSign/planSign?bgNum='+bgNum+'&planId='+planDel.id + '&topic_id='+planDel.topic_id}}" id="{{item.id}}">发布感想</navigator>
+          <view class='date_text'>
+            <image src="/images/plan/btnicon_right.svg" class="plan_btn" wx:if="{{is_sign == 1}}"></image>
+            <text wx:if="{{is_sign == 1}}">已打卡</text> 共打卡{{planDel.sign_total}}天，连续打卡{{planDel.ongoing_count}}天
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="swiper-view-lj">
+    <scroll-view scroll-x="true" class="swiper bg-fff" scroll-left="{{scrollLeft}}">
+      <view class='disF'>
+        <block wx:for="{{swiperItem}}" wx:key="id" class="position-r">
+          <view class="position-r swiper-span fontsize30 {{ curNavId == item.id ? 'color-main fontsize32':''}}" bindtap="tapChoose" data-id="{{item.id}}">
+            {{item.name}}
+            <view class="position-a small-line main-bg" wx:if="{{curNavId == item.id }}"></view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view class="scollV height100 width100 position-r">
+  <swiper class="tab-content" current="{{curIndex}}" duration="{{swipertime}}" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <swiper-item class='new-swiper' wx:if='{{isHide==0}}'>
+      <scroll-view class="swiper-inner" scroll-y nomore="{{nomore}}" bindscrolltolower="lower">
+        <view class='content new'>
+          <view wx:for="{{newlist}}" wx:for-item="item" wx:key="item.id" class="show_sign_wrap">
+            <topic-item topic-info="{{item}}"></topic-item>
+          </view>
+        </view>
+        <block wx:if='{{nodata==0}}'>
+          <view class='nodata color-litterdark' bindtap='moreAgain'>加载失败，请重试</view>
+        </block>
+        <block wx:if='{{nodata==1}}'>
+          <view class="nodata-view fontsize26 text-c color444 fff-bg">
+            <text class="iconfont icon-loading loading" space="nbsp"></text>
+            <text>正在加载更多数据</text>
+          </view>
+        </block>
+        <block wx:if='{{nodata==2}}'>
+          <view class='no-more'>已显示全部数据</view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item class='hot-swiper' wx:if='{{isHide==0}}'>
+      <scroll-view class="swiper-inner" scroll-y nomore="{{nomore}}" bindscrolltolower="lower">
+        <!-- <view>已为您加载{{moreNum}}</view> -->
+        <view class='content hot'>
+          <view wx:for="{{hotlist}}" wx:for-item="item" wx:key="{{index}}" class="show_sign_wrap">
+            <topic-item topic-info="{{item}}"></topic-item>
+          </view>
+        </view>
+        <block wx:if='{{nodata1==0}}'>
+          <view class='nodata color-litterdark' bindtap='moreAgain'>加载失败，请重试</view>
+        </block>
+        <block wx:if='{{nodata1==1}}'>
+          <view class="nodata-view fontsize26 text-c color444 fff-bg">
+            <text class="iconfont icon-loading loading" space="nbsp"></text>
+            <text>正在加载更多数据</text>
+          </view>
+        </block>
+        <block wx:if='{{nodata1==2}}'>
+          <view class='no-more'>已显示全部数据</view>
+        </block>
+        <!-- <view class="tips1 bg-fff">
+          <view class="nodata-view" wx:if='{{nodata}}'>
+            <text class="color-fff">已经全部加载完毕</text>
+          </view>
+        </view> -->
+      </scroll-view>
+    </swiper-item>
+    <swiper-item class='rank-swiper'>
+      <scroll-view class="swiper-inner" scroll-y nomore="{{nomore}}" bindscrolltolower="lower">
+        <!-- <view>已为您加载{{moreNum}}</view> -->
+        <view class='content rank'>
+          <block wx:for="{{ranklist}}" wx:for-item="item" wx:key="{{index}}">
+            <view class="weui-flex item_rank">
+              <view class="flex-center">
+                <view class="placeholder">
+                  <image class="user_img" src="{{item.avatar}}"></image>
+                </view>
+              </view>
+              <view class="weui-flex__item border-bt flex-center">
+                <view class="pad">
+                  <view class="user_name color333"> {{item.nickname}}</view>
+                  <view class="user_span color666">连续打卡{{item.ongoing_count}}天</view>
+                </view>
+              </view>
+              <view class='border-bt flex-center'>
+                <view class="total_day">打卡<text class="sign_day">{{item.sign_total}}</text>天</view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <block wx:if='{{nodata2==0}}'>
+          <view class='nodata color-litterdark' bindtap='moreAgain'>加载失败，请重试</view>
+        </block>
+        <block wx:if='{{nodata2==1}}'>
+          <view class="nodata-view fontsize26 text-c color444 fff-bg">
+            <text class="iconfont icon-loading loading" space="nbsp"></text>
+            <text>正在加载更多数据</text>
+          </view>
+        </block>
+        <block wx:if='{{nodata2==2}}'>
+          <view class='no-more'>已显示全部数据</view>
+        </block>
+        <!-- <view class="tips1 bg-fff">
+          <view class="nodata-view" wx:if='{{nodata}}'>
+            <text class="color-fff">已经全部加载完毕</text>
+          </view>
+        </view> -->
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
+<view class='cover_view position-a' hidden="{{showCover}}">
+<!-- <view class='cover_view position-a'> -->
+    <view class="position-a cover_view_inner">
+        <view class="cover_img">
+          <image class="" src="/images/plan/alert_checkin.png"></image>
+        </view>
+      <view class="cover_view_con fff-bg">
+
+        <view class="cover_view_tit color333 fontsize36 text-c">
+          坚持打卡3天，获得加群特权
+        </view>
+        <view class="cover_view_font color666 fontsize24">
+          点击下方按钮，回复【<text class="numFontF">q</text>】即可获取加群邀请码，与其他有相同计划的朋友一起加油！
+        </view>
+        <view class="cover_btn fontsize30">
+          <button open-type='contact' class="fontsize30 btn02 btn">回‘q’加群</button>
+          <view class="clear_both"></view>
+        </view>
+        <view bindtap='hideCover' class="text-c fontsize28 next_text ">下次再说</view>
+      </view>
+    </view>
+  </view>
+  </view>

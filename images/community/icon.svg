@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="18px" viewBox="0 0 22 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FB7661" offset="0%"></stop>
+            <stop stop-color="#FB8E70" stop-opacity="0.298262002" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FB7661" offset="0%"></stop>
+            <stop stop-color="#FB8E70" stop-opacity="0.300611413" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="社区首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-15.000000, -234.000000)">
+        <g id="Rectangle-4" transform="translate(14.000000, 234.000000)">
+            <rect fill="url(#linearGradient-1)" opacity="0.5" transform="translate(7.000000, 9.000000) rotate(-330.000000) translate(-7.000000, -9.000000) " x="5" y="0" width="4" height="18" rx="2"></rect>
+            <rect fill="url(#linearGradient-2)" transform="translate(17.000000, 9.000000) rotate(-330.000000) translate(-17.000000, -9.000000) " x="15" y="1.13686838e-13" width="4" height="18" rx="2"></rect>
+        </g>
+    </g>
+</svg>

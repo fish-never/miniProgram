@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/btn_add</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="成长+-计划" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="成长计划_全部计划" transform="translate(-331.000000, -90.000000)" fill-rule="nonzero">
+            <g id="form" transform="translate(0.000000, 65.000000)">
+                <g id="form/list-1">
+                    <g id="icon/btn_add" transform="translate(331.000000, 25.000000)">
+                        <circle id="Combined-Shape" fill="#FB7661" cx="11" cy="11" r="11"></circle>
+                        <path d="M9.5,9.5 L9.5,6 C9.5,5.44771525 9.94771525,5 10.5,5 L11.5,5 C12.0522847,5 12.5,5.44771525 12.5,6 L12.5,9.5 L16,9.5 C16.5522847,9.5 17,9.94771525 17,10.5 L17,11.5 C17,12.0522847 16.5522847,12.5 16,12.5 L12.5,12.5 L12.5,16 C12.5,16.5522847 12.0522847,17 11.5,17 L10.5,17 C9.94771525,17 9.5,16.5522847 9.5,16 L9.5,12.5 L6,12.5 C5.44771525,12.5 5,12.0522847 5,11.5 L5,10.5 C5,9.94771525 5.44771525,9.5 6,9.5 L9.5,9.5 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

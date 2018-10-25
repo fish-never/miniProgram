@@ -1,0 +1,13 @@
+<!--pages/collection/collection.wxml-->
+<navigator url="/pages/topicStickersDetail/topicStickersDetail?topic_id={{item.id}}" class="item-wrap"   wx:for="{{list}}"  wx:key="{{item.id}}" data-id="{{item.id}}">
+     <image src="{{'/images/community/topic00'+(index+1)%5+'.png'}}" mode="" class="item-img"></image>
+     <view class="item">
+        <view class="item-title">#{{item.name}}#</view>
+        <view class="item-content">{{item.description}}</view>
+      <view class="item-tip position-r"><image src='../../images/user/comment.png' class='commenticon position-a' />
+          <number-format wx:if="{{item.join_count != 0}}" realNum="{{item.join_count}}"></number-format>参与讨论
+      </view>
+     </view>
+</navigator>
+
+

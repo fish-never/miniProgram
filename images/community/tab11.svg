@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>我的_登录 copy 6</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="100%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FC9474" offset="0%"></stop>
+            <stop stop-color="#FB745F" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="我的_登录-copy-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-177.000000, -626.000000)">
+        <g id="Group-13" transform="translate(177.000000, 626.000000)">
+            <polygon id="Rectangle-11-Copy" fill="url(#linearGradient-1)" points="2 3.1003418 22.0664062 3.1003418 22.0664062 18.042858 15.3074951 18.042858 12.1291504 21.3551025 8.77050781 18.042858 2 18.042858"></polygon>
+            <path d="M7,9 L17,9" id="Path-4" stroke="#FFFFFF"></path>
+            <path d="M7,12 L17,12" id="Path-4" stroke="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

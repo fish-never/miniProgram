@@ -1,0 +1,144 @@
+<!--index.wxml-->
+<view class="overflow-i top-view position-f">
+  <!-- <navigator class="position-r usericon bg-fff" url="../usercenter/usercenter">
+  <view class="user-bg" data-name="user">
+    <image class="usericon-img" mode="aspectFill" src="/images/user-icon.png"></image>
+    <image class="usericon-shadow" mode="aspectFill" src="/images/shadow.png"></image>
+    </view>
+  </navigator> -->
+
+  <view class="swiper-view-lj">
+    <scroll-view scroll-x="true" class="swiper bg-fff" scroll-left="{{scrollLeft}}">
+      <block wx:for="{{swiperItem}}" wx:key="id" class="position-r">
+        <view class="position-r swiper-span fontsize30 {{ currentTab == item.id ? 'color-main fontsize32':''}}" data-index="{{index}}" data-id="{{item.id}}" bindtap="tapChoose" style="width:{{tabwidth}}rpx">
+          {{item.name}}
+          <view class="position-a small-line main-bg" wx:if="{{currentTab == item.id }}"></view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>
+<view class="scollV height100 width100 position-r">
+  <view class="nodata-view newdata" hidden='{{newRefeshdata}}'>
+    <text class="color-fff" wx:if="{{newdataS==1}}">成功为您推荐{{newdatanum}}条新内容</text>
+    <text class="color-fff" wx:if="{{newdataS==2}}">已经全部推荐完毕</text>
+    <text class="color-fff" wx:if="{{newdataS==3}}">推荐失败，请重试</text>
+  </view>
+  <swiper class="tab-content" current="{{curIndex}}" duration="{{swipertime}}" bindchange="switchTab" style="height:{{winHeight}}rpx">
+    <swiper-item wx:for="{{dataItem}}" wx:for-item="data" wx:key="data.id" data-id="{{data.id}}">
+
+        <!-- <view>已为您加载{{moreNum}}</view> -->
+        <view style="height:20rpx"></view>
+        <block wx:for="{{data.list}}" wx:for-item="item" wx:key="id">
+          <form bindsubmit="" report-submit='true' class='form_class' id="{{item.id}}" data-content_id="{{item.content}}">
+            <button form-type='submit' class='form_button' hover-class="hoverSty">
+              <view wx:if="{{item.display_type==1}}" class="viewitem padding-tb30 type1">
+                <view class="position-r viewitem-inner height100">
+                  <text class="viewtit onlytwo displayB fontsize34 color-dark jsutfont overflowH">{{item.title}}</text>
+                  <view class="overflowH">
+                    <text class="float-l viewtime fontsize20 margin-r30 color-litterdark">{{item.source}}</text>
+                    <text hidden='{{item.read_count==0}}' class="float-l viewtime viewpinglun fontsize20 color-dark">{{item.read_count}}阅读</text>
+                    <text hidden='{{item.comment_count==0}}' class="float-l viewtime viewpinglun fontsize20 color-dark">{{item.comment_count}}评论</text>
+                    <text hidden='{{item.like_count==0}}' class="float-l viewtime viewdianzan fontsize20 color-dark">{{item.like_count}}点赞</text>
+                  </view>
+                </view>
+              </view>
+              <view wx:if="{{item.display_type==3}}" class="viewitem padding-tb45 type2">
+                <view class="position-r viewitem-inner height100">
+                  <view class="viewleft">
+                    <text class="viewtit onlytwo displayB fontsize34 color-dark">{{item.title}}</text>
+                    <view class="overflowH">
+                      <text class="float-l viewtime fontsize20 margin-r30 color-litterdark source">{{item.source}}</text>
+                      <text hidden='{{item.read_count==0}}' class="float-l viewtime viewpinglun fontsize20 color-dark">{{item.read_count}}阅读</text>
+                      <text hidden='{{item.comment_count==0}}' class="float-l viewtime viewpinglun fontsize20 color-dark">{{item.comment_count}}评论</text>
+                      <text hidden='{{item.like_count==0}}' class="float-l viewtime viewdianzan fontsize20 color-dark">{{item.like_count}}点赞</text>
+                    </view>
+                  </view>
+                  <view class="viewright">
+                    <image class="product_image {{arr[index]?'loaded':''}}" lazy-load="{{true}}" mode="aspectFill" src="{{item.coverage[0]}}" bindload="shuru"></image>
+                  </view>
+                </view>
+              </view>
+
+              <view wx:if="{{item.display_type==2}}" class="viewitem padding-tb20 type3">
+                <view class="position-r viewitem-inner height100 ">
+                  <text class="viewtit onlytwo displayB fontsize34 color-dark margin-b20">{{item.title}}</text>
+                  <view class="view-full-image margin-b20">
+                    <image class="product_image1 {{arr[index]?'loaded':''}}" style="" mode="aspectFill" src="{{item.coverage[0]}}" data-src="{{item.coverage[0]}}" lazy-load="{{true}}" bindload="shuru"></image>
+                  </view>
+                  <view class="overflowH">
+                    <text class="float-l viewtime fontsize20 margin-r30 color-litterdark">{{item.source}}</text>
+                    <text hidden='{{item.read_count==0}}' class="float-l viewtime viewpinglun fontsize20 color-dark">{{item.read_count}}阅读</text>
+                    <text hidden='{{item.comment_count==0}}' class="float-l viewtime viewpinglun fontsize20 color-dark">{{item.comment_count}}评论</text>
+                    <text hidden='{{item.like_count==0}}' class="float-l viewtime viewdianzan fontsize20 color-dark">{{item.like_count}}点赞</text>
+
+                  </view>
+                </view>
+              </view>
+
+              <view wx:if="{{item.display_type==4}}" class="viewitem padding-tb20 type4">
+                <view class="position-r viewitem-inner height100">
+                  <text class="viewtit onlytwo displayB fontsize34 color-dark margin-b20">{{item.title}}</text>
+                  <view class="view-full-image margin-b20 position-r">
+                    <view class="position-a video-view-img">
+                      <image src="../../images/video.png" class='video-arrow position-a' mode="aspectFill"></image>
+                    </view>
+                    <image src="{{item.coverage[0]}}" class='video-img' mode="aspectFill" data-src="{{item.coverage[0]}}"></image>
+                    <!-- <video id="myVideo" src="{{item.video_uri}}" autoplay controls show-center-play-btn></video> -->
+                  </view>
+                  <view class="overflowH">
+                    <text class="float-l viewtime fontsize20 margin-r30 color-litterdark">{{item.source}}</text>
+                    <text hidden='{{item.read_count==0}}' class="float-l viewtime viewpinglun fontsize20 color-dark">{{item.read_count}}阅读</text>
+                    <text hidden='{{item.comment_count==0}}' class="float-l viewtime viewpinglun fontsize20 color-dark">{{item.comment_count}}评论</text>
+                    <text hidden='{{item.like_count==0}}' class="float-l viewtime viewdianzan fontsize20 color-dark">{{item.like_count}}点赞</text>
+
+                  </view>
+
+                </view>
+              </view>
+
+              <view wx:if="{{item.display_type==5}}" class="viewitem padding-tb20 type5">
+                <view class="position-r viewitem-inner height100">
+                  <text class="viewtit onlytwo displayB fontsize34 color-dark margin-b20">{{item.title}}</text>
+                  <view class="view-images margin-b20 displayF">
+                    <view class="flex-innner" wx:for="{{item.coverage}}" wx:for-item="img" wx:key="">
+                      <image class="product_image {{arr[index]?'loaded':''}}" style="" mode="aspectFill" src="{{img}}" data-src="{{img}}" lazy-load="{{true}}" bindload="shuru"></image>
+                    </view>
+                  </view>
+                  <view class="overflowH">
+                    <text class="float-l viewtime fontsize20 margin-r30 color-litterdark">{{item.source}}</text>
+                    <text hidden='{{item.read_count==0}}' class="float-l viewtime viewpinglun fontsize20 color-dark">{{item.read_count}}阅读</text>
+                    <text hidden='{{item.comment_count==0}}' class="float-l viewtime viewpinglun fontsize20 color-dark">{{item.comment_count}}评论</text>
+                    <text hidden='{{item.like_count==0}}' class="float-l viewtime viewdianzan fontsize20 color-dark">{{item.like_count}}点赞</text>
+
+                  </view>
+
+                </view>
+              </view>
+            </button>
+          </form>
+        </block>
+    </swiper-item>
+
+  </swiper>
+</view>
+<view class="updataBtn-con position-f">
+  <image class="up-bg" mode="" src="/images/IMPNG.png"></image>
+  <!-- <view class="position-a rotate-icon" animation="{{animation}}">
+<image class="" mode="" src="/images/updata.png"></image>
+</view> -->
+  <button open-type="contact" class="position-a contact-button"></button>
+</view>
+<view class="displayN">
+  <view class="updataBtn position-f" wx:if="{{isAndroid}}" bindtap='_onrefesh'>
+    <image class="up-bg" mode="" src="/images/updata-bg.png"></image>
+    <!-- <view class="position-a rotate-icon" animation="{{animation}}">
+<image class="" mode="" src="/images/updata.png"></image>
+</view> -->
+    <view class="position-a rotate-icon">
+      <image class="img1 {{updataing?'small-animate':''}}" mode="" src="/images/updata.png"></image>
+    </view>
+  </view>
+</view>
+<!-- 引入tab组件
+ <include src="../../components/tab-component/tab-component.wxml" />  -->

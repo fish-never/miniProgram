@@ -1,0 +1,34 @@
+<view class="fff-bg height100">
+<view wx:if="{{nodata==1}}">
+  <view class="nodata-img">
+    <image src='../../images/icon-nodata.png' mode="aspectFit"></image>
+  </view>
+  <view class="nodata-font  fontsize26 text-c color444">暂无内容</view>
+  </view>
+  <view wx:if="{{nodata==2}}">
+ <block wx:for="{{dataItem}}" wx:key=""  wx:for-item="item">
+   <navigator hover-class="hoverSty" class="goDetail bg-fff padding-lr30" url="../article/article?article_id={{item.id}}&content_id={{item.content}}"> 
+            <view class="viewitem padding-tb30 type1">
+              <view class="position-r viewitem-inner height100">
+                <text class="viewtit onlytwo displayB fontsize34 color-dark jsutfont overflowH">{{item.title}}</text>
+                <view class="overflowH">
+                  <text class="float-l viewtime fontsize20 margin-r30 color-litterdark">{{item.source}}</text>
+                  <text class="float-l viewtime fontsize20 margin-r30 color-litterdark">{{item.created_at}}</text>
+                </view>
+              </view>
+            </view>
+   </navigator> 
+</block> 
+<view class="nodata-view  fontsize26 text-c color444 fff-bg" wx:if="{{nomoredata==2}}">
+   <text class="iconfont icon-loading loading" space="nbsp"></text><text>正在加载更多数据</text>
+  </view>
+  <view class="nodata-view fontsize26 text-c color444 fff-bg" wx:if="{{nomoredata==1}}">
+        没有更多内容了
+  </view>
+  <view class="nodata-view fontsize26 text-c color444 fff-bg" wx:if="{{nomoredata==3}}">
+      加载失败，稍后再试
+    </view>   
+</view>
+  
+</view>
+

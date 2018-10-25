@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 13</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="100%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FC9474" offset="0%"></stop>
+            <stop stop-color="#FB745F" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="我的_登录-copy-5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-286.000000, -626.000000)">
+        <g id="Group-12" transform="translate(286.000000, 626.000000)">
+            <circle id="Oval-2" fill="url(#linearGradient-1)" cx="12" cy="11" r="9"></circle>
+            <path d="M6.53881836,13.3070813 C7.80112102,15.7470862 9.71131796,16.9670886 12.2694092,16.9670886 C14.8275004,16.9670886 16.7376973,15.7470862 18,13.3070813" id="Path-2" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

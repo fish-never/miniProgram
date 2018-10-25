@@ -1,0 +1,28 @@
+ <view class="weui-flex tab-flex">
+      <view class="weui-flex__item">
+      <navigator url="/pages/index1/index1" class="nav-pd">
+        <image wx:if="{{!firstTab}}" mode='aspectFill' src="../../images/community/tab2.svg" class="tab-img"></image>
+        <image wx:if="{{firstTab}}" mode='aspectFill' src="../../images/community/tab22.svg" class="tab-img"></image>
+        <view class="placeholder tab-text">首页</view>
+        </navigator>
+      </view>
+      <view class="weui-flex__item">
+       <navigator url="/pages/community/community"  hover-class='none'>
+
+        <image wx:if="{{!secondTab}}" mode='aspectFill' src="../../images/community/tab1.svg" class="tab-img"></image>
+        <image  wx:if="{{secondTab}}" mode='aspectFill' src="../../images/community/tab11.svg" class="tab-img"></image>
+         <view class="placeholder tab-text">社区</view>
+         </navigator>
+      </view>
+     <view class="weui-flex__item">
+
+     <navigator url="/pages/usercenter/usercenter" class="nav-pd">
+<!-- =======
+     <navigator url="/pages/usercenter/usercenter" hover-class='none' >
+>>>>>>> 0aa4625e18b1dd667377ada2c5b3e6e61e7023c3 -->
+        <image wx:if="{{!thirdTab}}" mode='aspectFill' src="../../images/community/tab33.svg" class="tab-img"></image>
+        <image wx:if="{{thirdTab}}" mode='aspectFill' src="../../images/community/tab3.svg" class="tab-img"></image>
+        <view class="placeholder tab-text">我的</view>
+      </navigator>
+      </view>
+  </view>

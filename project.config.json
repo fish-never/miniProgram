@@ -1,0 +1,115 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.9",
+	"appid": "wx18efce761ef613ed",
+	"projectname": "%E6%88%90%E9%95%BF%2B",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "分享",
+					"pathName": "pages/index1/index1",
+					"query": "user_id=3&article_id=234",
+					"scene": "1036",
+					"referrerInfo": {}
+				},
+				{
+					"id": 1,
+					"name": "分享首页",
+					"pathName": "pages/index1/index1",
+					"query": "user_id=123",
+					"scene": "1036",
+					"referrerInfo": {}
+				},
+				{
+					"id": 2,
+					"name": "公众号自定义菜单",
+					"pathName": "pages/index1/index1",
+					"query": "tagid=1",
+					"scene": "1035",
+					"referrerInfo": {}
+				},
+				{
+					"id": 3,
+					"name": "分享赚钱",
+					"pathName": "pages/index1/index1",
+					"query": "promote=123"
+				},
+				{
+					"id": 4,
+					"name": "分享首页",
+					"pathName": "pages/index1/index1",
+					"query": "promote=promote&user_id=7",
+					"scene": "1036",
+					"referrerInfo": {}
+				},
+				{
+					"id": -1,
+					"name": "活动跳转",
+					"pathName": "pages/index1/index1",
+					"query": "scene=0,0,0,2"
+				},
+				{
+					"id": -1,
+					"name": "跳转社区",
+					"pathName": "pages/community/community",
+					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "发布感想",
+					"pathName": "pages/planSign/planSign",
+					"query": "topic_id=5&planId=1&bgNum=0"
+				},
+				{
+					"id": -1,
+					"name": "计划列表",
+					"pathName": "pages/planList/planList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人计划列表",
+					"pathName": "pages/planIndex/planIndex",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "计划详情",
+					"pathName": "pages/planDetail/planDetail",
+					"query": "bgNum=1&planId=1&isAdd=1"
+				}
+			]
+		}
+	}
+}

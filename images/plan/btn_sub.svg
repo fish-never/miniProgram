@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/btn_ sub</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="成长+-计划" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="成长计划_全部计划" transform="translate(-331.000000, -236.000000)" fill="#9B9B9B" fill-rule="nonzero">
+            <g id="form" transform="translate(0.000000, 65.000000)">
+                <g id="form/list-3" transform="translate(0.000000, 145.000000)">
+                    <g id="icon/btn_-sub" transform="translate(331.000000, 26.000000)">
+                        <path d="M11,22 C4.92486775,22 0,17.0751322 0,11 C0,4.92486775 4.92486775,0 11,0 C17.0751322,0 22,4.92486775 22,11 C22,17.0751322 17.0751322,22 11,22 Z M6,9 C4.8954305,9 4,9.8954305 4,11 C4,12.1045695 4.8954305,13 6,13 L16,13 C17.1045695,13 18,12.1045695 18,11 C18,9.8954305 17.1045695,9 16,9 L6,9 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

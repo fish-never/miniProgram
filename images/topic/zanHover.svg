@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="16px" viewBox="0 0 17 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/zan hover</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 17 0 17 16 0 16"></polygon>
+    </defs>
+    <g id="社区" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="话题内页" transform="translate(-164.000000, -565.000000)">
+            <g id="form" transform="translate(0.000000, 277.000000)">
+                <g id="icon" transform="translate(0.000000, 281.000000)">
+                    <g id="icon/zan-hover" transform="translate(164.000000, 7.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M4,16 L4,5.10026803 L4.05832141,5.10026803 C5.54839297,5.10026803 6.84778139,4.05863463 7.14818478,2.62323422 L7.37780091,1.52764821 C7.49636955,0.962016034 7.86490566,0.483404196 8.38961614,0.215381566 C8.91211451,-0.0513357581 9.52486662,-0.071350435 10.0699284,0.160993857 C10.9047755,0.517342126 11.3719714,1.43714706 11.1808458,2.34868506 L10.6048146,5.10026803 L15.5824854,5.10026803 C16.364242,5.10026803 17,5.72550913 17,6.49389868 L16.9911516,6.5761329 L15.229434,14.6507497 C15.2055433,15.3986895 14.5790761,16 13.8128042,16 L4,16 Z M3,16 L1.41707222,16 C0.63575797,16 5.32907052e-15,15.3743238 5.32907052e-15,14.6054991 L5.32907052e-15,6.49389868 C5.32907052e-15,5.72550913 0.63575797,5.10026803 1.41707222,5.10026803 L3,5.10026803 L3,16 Z" id="Fill-1" fill="#FB7661" mask="url(#mask-2)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+function fmtTopic(topic){
+    var str = (topic+"").substring(0, 62);
+    var reg = getRegExp("#.*?#", "g");
+    var newtext = str.replace(reg, function (a) {
+      return '<a style="color:#FD782D">' + a + "</a>"
+    })
+    var moreHtml = ''
+    if (str.length > 62) {
+      moreHtml = '<span style="color:#8EA6B0">......显示全部</span>'
+    }
+    return newtext + moreHtml;
+
+  return str
+}
+
+module.exports = {
+  fmtTopic: fmtTopic
+}

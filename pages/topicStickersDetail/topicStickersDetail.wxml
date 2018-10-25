@@ -1,0 +1,85 @@
+<!--pages/topicDetail/topicDetail.wxml-->
+<view class="tsd position-f">
+<view class='title position-r'>
+  <image src='../../images/topic/topicTitle.png' class='titlebg' />
+  <view class="position-a title-inner">
+  <view class='topic'>#{{topicDel.name}}#</view>
+  <view class='topicdesc'>{{topicDel.description}}</view>
+  <view class='discussnum position-r'>
+    <image src='../../images/user/comment.png' class='commenticon position-a' />
+    <number-format wx:if="{{topicDel.join_count > 0}}" realNum="{{topicDel.join_count}}"></number-format>参与讨论
+    <navigator class="join_plan" url="{{'../planDetail/planDetail?bgNum='+bgNum+'&planId='+topicDel.planId}}" hover-class='none' wx:if="{{topicDel.planId !== null}}">加入打卡计划>></navigator>
+  </view>
+  </view>
+</view>
+<view class="swiper-view-lj">
+  <scroll-view scroll-x="true" class="swiper bg-fff" scroll-left="{{scrollLeft}}">
+    <view class='disF'>
+      <block wx:for="{{swiperItem}}" wx:key="id" class="position-r">
+        <view class="position-r swiper-span fontsize30 {{ curNavId == item.id ? 'color-main fontsize32':''}}" bindtap="tapChoose"  data-id="{{item.id}}">
+          {{item.name}}
+          <view class="position-a small-line main-bg" wx:if="{{curNavId == item.id }}"></view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>
+</view>
+<view class="scollV height100 width100 position-r" >
+  <swiper class="tab-content" current="{{curIndex}}" duration="{{swipertime}}" bindchange="switchTab" style="height:{{winHeight}}rpx">
+  <swiper-item class='hot-swiper'>
+      <scroll-view class="swiper-inner" scroll-y nomore="{{nomore}}" bindscrolltolower="lower">
+        <!-- <view>已为您加载{{moreNum}}</view> -->
+        <view class='content hot'>
+        <block wx:for="{{hotlist}}" wx:for-item="item"  wx:key="{{index}}">
+                <topic-item topic-info="{{item}}"></topic-item>
+        </block>
+        </view>
+        <block wx:if='{{nodata1==0}}'>
+          <view class='nodata color-litterdark' bindtap='moreAgain'>加载失败，请重试</view>
+        </block>
+        <block wx:if='{{nodata1==1}}'>
+          <view class="nodata-view fontsize26 text-c color444 fff-bg">
+            <text class="iconfont icon-loading loading" space="nbsp"></text>
+            <text>正在加载更多数据</text>
+          </view>
+        </block>
+        <block wx:if='{{nodata1==2}}'>
+          <view class='nodata color-litterdark'>已显示全部数据</view>
+        </block>
+        <!-- <view class="tips1 bg-fff">
+          <view class="nodata-view" wx:if='{{nodata}}'>
+            <text class="color-fff">已经全部加载完毕</text>
+          </view>
+        </view> -->
+      </scroll-view>
+    </swiper-item>
+    <swiper-item class='new-swiper'>
+      <scroll-view class="swiper-inner" scroll-y nomore="{{nomore}}" bindscrolltolower="lower">
+        <!-- <view>已为您加载{{moreNum}}</view> -->
+        <view class='content new'>
+        <block wx:for="{{newlist}}" wx:for-item="item"  wx:key="{{index}}">
+                <topic-item topic-info="{{item}}"></topic-item>
+        </block>
+        </view>
+        <block wx:if='{{nodata==0}}'>
+          <view class='nodata color-litterdark' bindtap='moreAgain'>加载失败，请重试</view>
+        </block>
+        <block wx:if='{{nodata==1}}'>
+          <view class="nodata-view fontsize26 text-c color444 fff-bg">
+            <text class="iconfont icon-loading loading" space="nbsp"></text>
+            <text>正在加载更多数据</text>
+          </view>
+        </block>
+        <block wx:if='{{nodata==2}}'>
+          <view class='nodata color-litterdark'>已显示全部数据</view>
+        </block>
+        <!-- <view class="tips1 bg-fff">
+          <view class="nodata-view" wx:if='{{nodata}}'>
+            <text class="color-fff">已经全部加载完毕</text>
+          </view>
+        </view> -->
+      </scroll-view>
+    </swiper-item>     
+  </swiper>
+</view>

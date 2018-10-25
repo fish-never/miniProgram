@@ -1,0 +1,66 @@
+<!--pages/planIndex/planIndex.wxml-->
+<view>
+  <view class="f5_bg padding-b30">
+    <view class="{{'bg_color_'+bgNum}} calendar_top colorfff">
+      <text class="fontsize20 displayB margin-b22">已打卡<text class="calendar_day numFontF">{{signTotal}}</text>天</text>
+      <view class="fontsize24 displayB">参与计划{{joinCount}}天，正与{{userCount}}人一起坚持</view>
+    </view>
+  </view>
+  <view class="calendar_bottom">
+    <view class="calendar_b_tit text-c">{{todayDate}}</view>
+    <view class="week_tit">
+      <view class="week_label">MON</view>
+      <view class="week_label">TUE</view>
+      <view class="week_label">WED</view>
+      <view class="week_label">THU</view>
+      <view class="week_label">FRI</view>
+      <view class="week_label">SAT</view>
+      <view class="week_label">SUN</view>
+    </view>
+    <view>
+      <view class="day_list overflow-h">
+        <view class="day_label position-r" wx:for="{{allDate}}" wx:key="index" wx:for-item="item" bindtap='showCoverF' data-index='{{index}}'>
+          <view class="sign_view position-a issign" wx:if="{{item.isSign==1}}">
+            {{item.date}}
+            <view class="istoday_view position-a" wx:if="{{item.isToday==1}}"></view>
+          </view>
+          <view class="{{item.isfetrue==1?'isfetrue sign_view position-a':'sign_view position-a' }}" wx:if="{{item.isSign==0}}">
+            {{item.date}}
+            <view class="cansign_view position-a" wx:if="{{item.canSign==1}}">可补签</view>
+            <view class="istoday_view position-a" wx:if="{{item.isToday==1}}"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="text-c calendar_b_tip margin-b10">点击最近7日以内未打卡日期，可补签</view>
+    <button class="btn02 btn_share fontsize30" open-type="share" hover-class='none'>分享</button>
+  </view>
+
+  <view class='cover_view position-a' hidden="{{showCover}}">
+    <view class="position-a cover_view_inner">
+    <view class="cover_img">
+        <image class="" src="/images/plan/alert_checkin.png"></image>
+      </view>
+      <view class="cover_view_con fff-bg">
+        <view class="cover_view_tit color333 fontsize36 text-c">
+          当日没有打卡，想要补签？
+        </view>
+        <view class="cover_view_font color666 fontsize24">
+          你当前有
+          <text class="chance">{{signChance}}</text>次补签的机会，点击补签按钮，即可进行补签!
+        </view>
+        <view class="margin-b40 cover_view_font color666 fontsize24">
+          邀请1位新朋友加入计划并进行首次打卡，即可获得1次补签机会!
+        </view>
+        <view class="cover_btn fontsize30">
+          <button class="float-l fontsize30 btn01 btn" open-type="share">邀请好友</button>
+          <button wx:if='{{signChance==0}}' class="float-r fontsize30 btn04 btn">立即补签</button>
+          <button wx:else bindtap='supplement' class="float-r fontsize30 btn02 btn">立即补签</button>
+          <view class="clear_both"></view>
+        </view>
+
+        <view bindtap='hideCover' class="text-c fontsize28 color333 ">下次再说</view>
+      </view>
+    </view>
+  </view>
+</view>
