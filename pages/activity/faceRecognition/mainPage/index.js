@@ -1,4 +1,4 @@
-import wxCharts from "../../../../libs/wxcharts-min";
+
 import dot from "../../../../utils/dot";
 
 const app = getApp();

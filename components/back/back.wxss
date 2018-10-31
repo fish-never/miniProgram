@@ -1,0 +1,24 @@
+.back{
+  width: 60rpx;
+  height: 72rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 99;
+}
+.back image{
+  width: 20rpx;
+  height: 36rpx;
+}
+.back.large {
+  height: 100rpx;
+  width: 90rpx;
+}
+.back.large image{
+  width: 30rpx;
+  height: 48rpx;
+}
+.back-hover{
+  background: rgba(0,0,0,.1);
+}

@@ -1,0 +1,4 @@
+<navigator style="top:{{top}}px" open-type="navigateBack"	delta="1" class="back {{size}}" hover-class="back-hover" wx:if="{{isHidden}}">
+  <image wx:if="{{isWhite}}" src="https://ananas-img.tdf.ministudy.com/project/nav_arrow_white.png?t=2"></image>
+  <image wx:else src="https://ananas-img.tdf.ministudy.com/project/nav_arrow.png?t=2"></image>
+</navigator>

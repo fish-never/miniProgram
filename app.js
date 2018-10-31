@@ -1,9 +1,11 @@
 import dot from './utils/dot.js'
-let auth = require('common/auth').auth;
+//let auth = require('common/auth').auth;
+import auth from './common/auth'
 let Promise = require('common/es6-promise.js');
 var util = require('utils/util')
 var wxApi = require('utils/wxApi')
 var wxRequest = require('utils/wxRequest')
+
 var scence = 0;
 dot.enable()
 dot.registerApp({
@@ -44,53 +46,103 @@ App({
     }
     console.log(fromId)
     //wx.setStorageSync('logs', logs)
-    wx.login({
-      success: res => {
-        // console.log(sceneUserId)
-        // 鍙戦�� res.code 鍒板悗鍙版崲鍙� openId, sessionKey, unionId
-        var appid = 'wx18efce761ef613ed';
-        var secret = '';
-        var code = res.code;
-        wx.request({
-          url: that.globalData.serverUrl + '/login/index/index',
-          // url: 'http://duanwei.toutiao.com/login/index/index',
-          method: 'GET',
-          data: {
-            code: code,
-            fromId: that.globalData.fromId,
+    const loginMini = () => {
+      auth.remove()
+      wx.login({
+        success: res => {
+          let data = {
+            code: res.code,
+            fromId: fromId,
+            envelopeRecordId:options.query.envelopeRecordId,
             version: that.globalData.version_id
-          },
-          success: res => {
-            if (res.data.code == 0) {
-              var _user_token = res.data.data.token
-              var _user_openid = res.data.data.openid
-              var _user_unionId = res.data.data.unionid
-              var _user_id = res.data.data.userid
-              var token_time = Date.parse(new Date()) + 23 * 60 * 60 * 60
-              var _isCheck = res.data.data.setting.isCheck
-              var has_phone = res.data.data.has_phone
-              var openShare = res.data.data.setting.openShare
-              wx.setStorageSync('token_time', token_time);
-              wx.setStorageSync('_user_token', _user_token);
-              wx.setStorageSync('_user_openid', _user_openid);
-              wx.setStorageSync('_user_unionId', _user_unionId);
-              wx.setStorageSync('_user_id', _user_id);
-              wx.setStorageSync('_isCheck', _isCheck);
-              wx.setStorageSync('has_phone', has_phone);
-              wx.setStorageSync('openShare', openShare);
-              that.globalData.s_token = wx.getStorageSync('_user_token');
-              that.globalData.s_openid = wx.getStorageSync('_user_openid');
-              that.globalData.s_userid = wx.getStorageSync('_user_id');
-              that.globalData._isCheck = wx.getStorageSync('_isCheck');
-              that.globalData.has_phone = wx.getStorageSync('has_phone');
-              that.globalData.openShare = wx.getStorageSync('openShare');
-            } else {
-              console.log(res)
-            }
           }
-        })
-      }
-    });
+          if(options.query.counselor){
+            data.counselor=options.query.counselor
+          }
+          if(options.query.scene){
+            data.scene=options.query.scene
+          }
+          wx.request({
+            url: that.globalData.serverUrl + '/login/index/index',
+            method:'GET',
+            data:data,
+            success:res=>{
+              if (res.data.code == 0){
+                var _user_token = res.data.data.token
+                var _user_openid = res.data.data.openid
+                var _user_unionId = res.data.data.unionid
+                var _user_id = res.data.data.userid
+                var token_time = Date.parse(new Date()) + 23 * 60 * 60 * 60
+                var _isCheck = res.data.data.setting.isCheck
+                var has_phone = res.data.data.has_phone
+                var openShare = res.data.data.setting.openShare
+                wx.setStorageSync('token_time', token_time);
+                wx.setStorageSync('_user_token', _user_token);
+                wx.setStorageSync('_user_openid', _user_openid);
+                wx.setStorageSync('_user_unionId', _user_unionId);
+                wx.setStorageSync('_user_id', _user_id);
+                wx.setStorageSync('_isCheck', _isCheck);
+                wx.setStorageSync('has_phone', has_phone);
+                wx.setStorageSync('openShare', openShare);
+                that.globalData.s_token = wx.getStorageSync('_user_token');
+                that.globalData.s_openid = wx.getStorageSync('_user_openid');
+                that.globalData.s_userid = wx.getStorageSync('_user_id');
+                that.globalData._isCheck = wx.getStorageSync('_isCheck');
+                that.globalData.has_phone = wx.getStorageSync('has_phone');
+                that.globalData.openShare = wx.getStorageSync('openShare');
+
+                auth.set(res.data.data.token)
+                setPromise()
+              }
+            },
+            fail:res=>{
+              wx.showModal({
+                title:'提示',
+                content:'网络错误，请稍后再试',
+                showCancel:false
+              })
+            }
+          })
+        }
+      })
+    }
+
+    //promise阻塞请求
+    const setPromise=()=>{
+      this.globalData.promise=new Promise((resolve,reject)=>{
+        resolve()
+      })
+    }
+    // 判断token是否过期强制login
+    if (auth.get()) {
+      wx.checkSession({
+        success: _ => {
+          wx.request({
+            url: config.api.user.checkSession,
+            method: 'GET',
+            header: {
+              'auth-token': auth.get(),
+              client: 'ananas',
+            },
+            success: res => {
+              if (res.data.success && res.data.response.status === 200) {
+                setPromise()
+              } else {
+                loginMini()
+              }
+            },
+            fail: () => {
+              loginMini()
+            }
+          })
+        },
+        fail: () => {
+          loginMini()
+        }
+      })
+    } else {
+      loginMini()
+    }
     
   },
   onShow: function (options) {
@@ -150,9 +202,10 @@ App({
     query: {},
     askedArtId:[],//已点击过一键咨询的文章id列表
     version_id: '20401',
-    fromId: 0
-
+    fromId: 0,
+    promise:null,//request阻塞promise
   },
+  
   getToken:function(funC){
     var that =this
     var wxLogin = wxApi.wxLogin()

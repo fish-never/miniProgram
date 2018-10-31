@@ -1,4 +1,4 @@
-import wxCharts from '../../../../libs/wxcharts-min.js'
+
 Page({
   data: {
     percent:0,

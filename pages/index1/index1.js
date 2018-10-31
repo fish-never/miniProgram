@@ -1,5 +1,6 @@
 //index.js
 import dot from '../../utils/dot.js'
+import {observer} from '../../libs/observer'
 var util = require('../../utils/util')
 var wxApi = require('../../utils/wxApi')
 var wxRequest = require('../../utils/wxRequest')
@@ -11,6 +12,7 @@ let Promise = require('../../common/es6-promise.js');
 var wxApi = require('../../utils/wxApi')
 var wxRequest = require('../../utils/wxRequest')
 var getToken = require('../../utils/token.js');
+
 //获取应用实例
 const app = getApp()
 const sUrl = app.globalData.serverUrl;
@@ -32,7 +34,7 @@ var addition = {
   "tagId": 0,
 };
 
-Page({
+Page(observer({
   data: {
     firstTab: true, //tab首页显示
     ctHeight: '',
@@ -840,4 +842,4 @@ Page({
       url: '../article/article?article_id=' + e.currentTarget.id + '&content_id=' + e.currentTarget.dataset.content_id,
     })
   }
-})
+}))
