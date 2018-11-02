@@ -1,9 +1,0 @@
-{
-  "window": {
-    "backgroundTextStyle": "black",
-    "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "+头条",
-    "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": false
-  }
-}

@@ -110,7 +110,7 @@ var observer = function(page){
   }
   page.__dot_page = function () {
     return {
-      title: '🍍菠萝英语',
+      title: '',
     }
     if( old__dot_page ) {
       old__dot_page.apply(this, arguments);
@@ -244,9 +244,9 @@ var observer = function(page){
     log.leave({
       duration: new Date().getTime() - pageStartTime
     });
-    // todo page切换隐藏时设置title为'🍍菠萝英语'
+    // todo page切换隐藏时设置title为''
     logContext.registerPage({
-      title: '🍍菠萝英语'
+      title: ''
     })
     if( oldOnHide ) {
       oldOnHide.apply(this, arguments);

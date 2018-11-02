@@ -140,9 +140,6 @@ function logRequest(params) {
   fetch.post({
     url: config.api.log,
     data: params,
-    header: {
-      'log-from': 'ananas'
-    },
     success: res => {
       // console.log(res)
     },

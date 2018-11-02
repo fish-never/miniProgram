@@ -122,13 +122,6 @@
 
   </swiper>
 </view>
-<view class="updataBtn-con position-f">
-  <image class="up-bg" mode="" src="/images/IMPNG.png"></image>
-  <!-- <view class="position-a rotate-icon" animation="{{animation}}">
-<image class="" mode="" src="/images/updata.png"></image>
-</view> -->
-  <button open-type="contact" class="position-a contact-button"></button>
-</view>
 <view class="displayN">
   <view class="updataBtn position-f" wx:if="{{isAndroid}}" bindtap='_onrefesh'>
     <image class="up-bg" mode="" src="/images/updata-bg.png"></image>

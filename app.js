@@ -1,4 +1,4 @@
-import dot from './utils/dot.js'
+
 //let auth = require('common/auth').auth;
 import auth from './common/auth'
 let Promise = require('common/es6-promise.js');
@@ -7,22 +7,7 @@ var wxApi = require('utils/wxApi')
 var wxRequest = require('utils/wxRequest')
 
 var scence = 0;
-dot.enable()
-dot.registerApp({
-  serverUrl: 'https://datacenter.sunlands.com/datacenter_app/dataService',
-  appId: '',
-  openId: wx.getStorageSync('_user_openid'),
-  siteId: '',
-  unionId: '',
-});
-//https://datacenter.sunlands.com/datacenter_app/dataService 产品环境 
-//https://enterapp.sunlands.com/datacenter_app/dataService 测试环境
 
-dot.registerApp({
-  _verbose: true
-});
-
-dot.start()
 //app.js
 App({
   onLaunch: function (options) {
@@ -121,8 +106,7 @@ App({
             url: config.api.user.checkSession,
             method: 'GET',
             header: {
-              'auth-token': auth.get(),
-              client: 'ananas',
+              'auth-token': auth.get()
             },
             success: res => {
               if (res.data.success && res.data.response.status === 200) {

@@ -1,5 +1,4 @@
 //index.js
-import dot from '../../utils/dot.js'
 import {observer} from '../../libs/observer'
 var util = require('../../utils/util')
 var wxApi = require('../../utils/wxApi')
@@ -43,23 +42,23 @@ Page(observer({
     scrollLeft: 0, //tab标题的滚动条位置
     sss: app.globalData.s_token,
     swiperItem: [{
-        name: '推荐',
+        name: '新闻',
         id: '0'
       },
       {
-        name: '自考',
+        name: '地图',
         id: '1'
       },
       {
-        name: '职场',
+        name: '视频',
         id: '3'
       },
       {
-        name: '文化',
+        name: '贴吧',
         id: '5'
       },
       {
-        name: '生活',
+        name: '学术',
         id: '9'
       },
     ],
@@ -110,19 +109,7 @@ Page(observer({
   /**
    * 页面信息的打点配置
    */
-  __dot_page: function() {
-    addition.sceneUserId = this.data.sceneUserId
-    addition.sceneActicleId = this.data.sceneActicleId
-    addition.sceneUserId = app.globalData.sceneUserId
-    addition.sceneActicleId = app.globalData.sceneActicleId
-    var addistr = JSON.stringify(addition);
-    console.log(addition)
-    return {
-      title: 'listExposure',
-      category: '浏览信息打点',
-      addition: addistr,
-    }
-  },
+
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -337,12 +324,6 @@ Page(observer({
         addition.contentId = this.data.categoryContentIdArray.toString();
         console.log(addition);
         var addistr = JSON.stringify(addition);
-        dot.customEvent({
-          event: 'changeTab',
-          category: '动作信息打点',
-          value: 'listExposure',
-          addition: addistr
-        })
       },
       fail: res => {
         that.setData({
@@ -516,12 +497,6 @@ Page(observer({
             addition.actionId = 'listPaging';
             console.log(addition);
             var addistr = JSON.stringify(addition);
-            dot.customEvent({
-              event: 'pullUp',
-              category: '动作信息打点',
-              value: 'listPaging',
-              addition: addistr
-            })
             //rdata = that.data.dataItem.concat(rdata)
             that.data.dataItem[that.data.curIndex].list = that.data.dataItem[that.data.curIndex].list.concat(rdata)
             that.setData({
@@ -680,12 +655,6 @@ Page(observer({
               addition.actionType = "list",
                 console.log(addition);
               var addistr = JSON.stringify(addition);
-              dot.customEvent({
-                event: 'pullDown',
-                category: '动作信息打点',
-                value: 'listRefesh',
-                addition: addistr
-              })
             },
             fail: res => {
               that.setData({

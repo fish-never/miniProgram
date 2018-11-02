@@ -1,26 +1,8 @@
 {
   "pages": [
     "pages/index1/index1",
-    "pages/load/load",
-    "pages/label/label",
-    "pages/usercenter/usercenter",
     "pages/logs/logs",
-
-    "pages/about/about",
-    "pages/communityConventions/communityConventions",
-    "pages/communityNorms/communityNorms",
-    "pages/myPrise/myPrise",
-    "pages/myHistory/myHistory",
-    "pages/promote/promote",
-
-    "pages/topicStickersDetail/topicStickersDetail",
-    "pages/collection/collection",
-    "pages/planList/planList",
     "pages/planSign/planSign",
-    "components/tab-component/tab-component",
-    "pages/activity/faceRecognition/mainPage/index",
-    "pages/activity/lottery/index",
-    "pages/activity/lottery/resultPage/index",
     "pages/planIndex/planIndex",
     "pages/planDetail/planDetail",
     "pages/planCalendar/planCalendar"
@@ -53,12 +35,6 @@
         "text": "计划",
         "selectedIconPath": "images/bar/nav_porject_on.png",
         "iconPath": "images/bar/nav_porject_off.png"
-      },
-      {
-        "pagePath": "pages/usercenter/usercenter",
-        "text": "我的",
-        "selectedIconPath": "images/bar/nav_mine_on.png",
-        "iconPath": "images/bar/nav_mine_off.png"
       }
     ]
   }

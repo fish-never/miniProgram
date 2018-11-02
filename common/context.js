@@ -9,7 +9,7 @@ const pageContext = {
     pvId: '',
     url: '',
     route: '',
-    title: '🍍菠萝英语',
+    title: '',
     query: {},
     prevPvId: '',
     prevUrl: '',
