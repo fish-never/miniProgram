@@ -125,7 +125,7 @@ function buildBehaviorParams() {
     // device: appContext.device,
     networkType: getApp().globalData.networkType,
     referrerInfo: getApp().globalData.referrerInfo,
-    appId: 'wxfc12e752015e952f',
+    appId: '',
     event: {
       category: '',
       action: '',

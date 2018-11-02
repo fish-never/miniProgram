@@ -10,7 +10,7 @@ var scence = 0;
 dot.enable()
 dot.registerApp({
   serverUrl: 'https://datacenter.sunlands.com/datacenter_app/dataService',
-  appId: 'wx18efce761ef613ed',
+  appId: '',
   openId: wx.getStorageSync('_user_openid'),
   siteId: '',
   unionId: '',
